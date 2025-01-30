@@ -17,12 +17,12 @@ return new class extends Migration
                 ->constrained(table: 'users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->string('title');
-            $table->string('slug')->unique();
-            $table->foreignId('theme_id')
+            $table->string('title')->nullable();
+            $table->string('slug')->unique()->nullable();
+            $table->foreignId('theme_id')->nullable()
                 ->constrained(table: 'themes')
                 ->onUpdate('cascade')
-                ->onDelete('cascade')->nullable();
+                ->onDelete('cascade');
             $table->json('settings')->nullable();
             $table->tinyInteger('is_published')->default(0);
             $table->timestamps();
@@ -33,6 +33,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('portfolio_id')->constrained(table:'portfolios')->onUpdate('cascade')->onDelete('cascade');
             $table->string('title');
+            $table->string('slug')->unique()->nullable();
             $table->enum('type',['text','image','gallery','video','custom']);
             $table->text('context')->nullable();
             $table->tinyInteger('position')->default(0);

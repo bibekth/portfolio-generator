@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class HomeController extends Controller
 {
@@ -28,10 +31,20 @@ class HomeController extends Controller
     }
 
     public function dashboard(){
-        return view('dashboard.index');
+        $auth = Auth::user();
+        $data['portfolios'] = Portfolio::where(['user_id'=>$auth->id])->get();
+        return view('dashboard.index', $data);
     }
 
-    public function createPortfolio(){
-        return view('create-portfolio');
+    public function createPortfolio(Request $request){
+        $auth = Auth::user();
+        $data['portfolio'] = Portfolio::create(['user_id'=>$auth->id,'title'=>$request->title]);
+        return back();
+    }
+
+    public function editPortfolio($id){
+        $auth = Auth::user();
+        $data['portfolio'] = Portfolio::findOrFail($id);
+        return view('dashboard.create-portfolio', $data);
     }
 }
