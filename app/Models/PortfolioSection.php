@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 class PortfolioSection extends Model
 {
     protected $fillable = [
-        'portfolio_id','title','type','context','position'
+        'portfolio_id','title','slug','type','context','position',
     ];
 
     public static function boot()

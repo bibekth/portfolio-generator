@@ -4,19 +4,22 @@
  * building robust, powerful web applications using React + Laravel.
  */
 
-import './bootstrap';
+// import './bootstrap';
 
 /**
  * Next, we will create a fresh React component instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './components/App';
 
-const container = document.getElementById('create-website-app-react');
+const container = document.getElementById('edit-website-container');
 const root = createRoot(container);
 root.render(<App />);
 

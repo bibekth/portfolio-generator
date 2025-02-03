@@ -13,7 +13,7 @@
 
         <div class="">
             @foreach ($portfolios as $portfolio)
-            <button class="btn btn-success"><a href="{{ route('dashboard.edit.portfolio', $portfolio->id) }}">{{ $portfolio->id }} - {{ $portfolio->title }}</a></button>
+            <button class="btn btn-success"><a href="{{ route('dashboard.edit.portfolio', $portfolio->id) }}"><span class="text-light">{{ $portfolio->id }} - {{ $portfolio->title }}</span></a></button>
             @endforeach
         </div>
     </div>

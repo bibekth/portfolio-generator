@@ -33,7 +33,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('portfolio_id')->constrained(table:'portfolios')->onUpdate('cascade')->onDelete('cascade');
             $table->string('title');
-            $table->string('slug')->unique()->nullable();
+            $table->string('slug')->nullable();
             $table->enum('type',['text','image','gallery','video','custom']);
             $table->text('context')->nullable();
             $table->tinyInteger('position')->default(0);
@@ -55,7 +55,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('portfolio_id')->constrained(table:'portfolios')->onUpdate('cascade')->onDelete('cascade');
             $table->string('title');
-            $table->string('slug')->unique()->nullable();
+            $table->string('slug')->nullable();
             $table->longText('context')->nullable();
             $table->string('feature_image')->nullable();
             $table->tinyInteger('status')->default(0);

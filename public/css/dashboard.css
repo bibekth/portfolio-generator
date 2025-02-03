@@ -1,3 +1,41 @@
 /* nav.navbar{
     padding: 0 5rem;
 } */
+#edit-website-container>.row>.col-2 {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: white;
+}
+
+#edit-website-container>.row>.col-10>.content-section {
+    border: 2px solid black !important;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.techenfield-nav-section {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.techenfield-content-section {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.techenfield-footer-section {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.my-modal-wrapper {
+    position: absolute;
+    z-index: 1060;
+  }

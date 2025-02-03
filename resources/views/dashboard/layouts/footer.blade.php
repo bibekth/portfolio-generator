@@ -1,3 +1,3 @@
-<footer class="position-absolute bottom-0 start-50 translate-middle-x">
+<footer class="d-flex justify-content-center mt-3">
     <p>&copy; {{ date('Y') }} {{ config('app.name') }}. All Rights Reserved.</p>
 </footer>
